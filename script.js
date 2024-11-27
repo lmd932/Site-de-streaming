@@ -23456,6 +23456,44 @@ let listeFilms = [
   }
 ];
 
-// Afficher tous les films (Titre, Poster, Année, + si envie)
-//Faire un bouton qui permet de choisir un film aléatoire à regarder ce soir
+// Fonction pour afficher tous les films
+function displayMovies(movies) {
+  let movieListElement = document.getElementById('movie-list');
+  movieListElement.innerHTML = ''; // Vide la liste avant d'afficher les films
+
+  movies.forEach(movie => {
+      let movieElement = document.createElement('div');
+      movieElement.classList.add('movie-item'); // Ajoute une classe à chaque film
+      
+      movieElement.innerHTML = `
+          <img src="${movie.thumbnail}" alt="${movie.title}">
+          <h3>${movie.title} (${movie.year})</h3>
+          <p>Genres: ${movie.genres.join(', ')}</p>
+          <p>Cast: ${movie.cast.join(', ')}</p>
+          <p><a href="https://en.wikipedia.org/wiki/${movie.href}" target="_blank">En savoir plus</a></p>
+      `;
+      movieListElement.appendChild(movieElement); // Ajoute chaque film à la liste
+  });
+}
+
+// Fonction pour choisir un film aléatoire
+function chooseRandomMovie() {
+  let randomIndex = Math.floor(Math.random() * listeFilms.length); // Choisit un film aléatoire
+  let randomMovie = listeFilms[randomIndex];
+  let randomMovieElement = document.getElementById('random-movie');
+  randomMovieElement.innerHTML = `
+      <h2>Ton film pour ce soir</h2>
+      <div class="movie-item">
+          <img src="${randomMovie.thumbnail}" alt="${randomMovie.title}">
+          <h3>${randomMovie.title} (${randomMovie.year})</h3>
+          <p>Genres: ${randomMovie.genres.join(', ')}</p>
+          <p>Cast: ${randomMovie.cast.join(', ')}</p>
+          <p><a href="https://en.wikipedia.org/wiki/${randomMovie.href}" target="_blank">En savoir plus</a></p>
+      </div>
+  `;
+}
+
+// Afficher tous les films dès le début
+displayMovies(listeFilms);
+
 

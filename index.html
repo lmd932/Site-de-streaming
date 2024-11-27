@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste de Films</title>
+    <!-- Lien vers le fichier CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="Nav">
+    <h1>Liste de Films</h1>
 
-<h1>Films à Regarder</h1>
+    <!-- Le bouton pour choisir un film aléatoire en haut -->
+    <button id="random-movie-btn">Choisir un film aléatoire</button>
+</div>   
+    <!-- L'espace où les films seront affichés -->
+    <div class="movie-list" id="movie-list"></div>
 
-<div id="filmList"></div>
+    <!-- Affichage du film aléatoire -->
+    <div id="random-movie"></div>
 
-<button id="randomFilmButton">Choisir un film aléatoire</button>
-
-<script src="script.js"></script>
-
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

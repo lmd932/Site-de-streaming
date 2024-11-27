@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #636060;
+    margin: 0;
+    padding: 20px;
+}
+
+.Nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Style du bouton */
+button {
+    padding: 10px 20px;
+    background-color: #9b0c83;
+    color: white;
+    border: none;
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 60px;
+}
+
+button:hover {
+    background-color: #49063e;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.movie-item {
+    background-color: white; 
+    border-radius: 10px; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.movie-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.movie-item h3 {
+    margin: 10px 0; 
+    font-size: 18px; 
+}
+
+.movie-item p {
+    font-size: 14px;
+    color: #555; 
+}
+
+#random-movie {
+    margin-top: 20px;
+}
+
